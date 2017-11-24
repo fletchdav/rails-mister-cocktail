@@ -1,9 +1,12 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/banner' %>
-<h2>Browse our cocktails</h2>
-<ul>
-<% @cocktails.each do |cocktail| %>
-<li> <%= link_to cocktail.name, cocktail_path(cocktail) %> </li>
-<% end %>
-</ul>
-
+<div class="container">
+  <h2>Browse our cocktails</h2>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-6 col-ml-4">
+        <%= render 'shared/card', cocktail: cocktail %>
+      </div>
+    <% end %>
+  </div>
+</div>

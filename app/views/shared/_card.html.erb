@@ -1,0 +1,12 @@
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+url(<% if cocktail.photo.stored_version %>
+      <%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <%= cl_image_path("mintjulep", width: 400, height: 300, crop: :fill) %>
+    <% end %>)");>
+  <div class="card-description">
+    <h2><%= cocktail.name %></h2>
+    <p> <%=  cocktail.ingredients.map {|ingredient| ingredient.name}.join(", ") %> </p>
+  </div>
+  <%= link_to "bla",cocktail_path(cocktail),{class:"card-link"}  %>
+</div>
